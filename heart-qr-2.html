@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 20px;
+    }
+    .label {
+      font-family: 'Dancing Script', cursive;
+      color: #fff;
+      font-size: 1.4rem;
+    }
+    #qr canvas, #qr img {
+      display: block;
+      border-radius: 12px;
+    }
+    .sub {
+      font-family: 'Dancing Script', cursive;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="label">please scan the qrcode</div>
+  <div id="qr"></div>
+  <div class="sub"></div>
+  <script>
+    new QRCode(document.getElementById('qr'), {
+      text: "https://kioshisaiki-lab.github.io/formybabii/",
+      width: 280,
+      height: 280,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>
